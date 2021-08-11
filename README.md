@@ -1,54 +1,52 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby minimal starter
+  Talus-Gatsby-Starter
 </h1>
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Clone This Starter.**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+    And pull it before using it!
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+2.  **Build AWS Stack & Update CCI config**
 
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
+    Use the `build-stack` repo to set up all AWS resources for this project:
 
     ```shell
-    cd my-gatsby-site/
-    npm run develop
+    aws cloudformation deploy --stack-name [project-name] --template-file build-stack.yaml --capabilities CAPABILITY_NAMED_IAM
     ```
 
-3.  **Open the code and start customizing!**
+    The "Outputs" tab of the CloudFormation stack will contain the distribution IDs which should be used in `/.circleci/config.yml`.
 
-    Your site is now running at http://localhost:8000!
+3.  **Check Gatsby CLI configuration**
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+    To be compatible with our CCI build scripts, Gatsby CLI should use `yarn`:
 
-4.  **Learn more**
+    `~/.config/gatsby/config.json` should include:
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    ```json
+    "cli": {
+      "packageManager": "yarn"
+    }
+    ```
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+4.  **Create a Gatsby site.**
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    Use the Gatsby CLI to create a new site, specifying this local starter.
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    ```shell
+    # create a new Gatsby site using the talus starter
+    gatsby new [project-name] ./talus-gatsby-starter
+    ```
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+5.  **Set up Git**
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    Execute the included `setup-repo.sh` script to initialize a git repo with all branches configured in the CCI config.
 
-## 🚀 Quick start (Gatsby Cloud)
+    ```shell
+    ./setup-repo.sh
+    ```
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+6.  **Update `gatsby-config.js`.**
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+    `gatsby-config.js` will automatically configure opt-in analytics, cookieconsent, and airtable connections based on the values provided.
