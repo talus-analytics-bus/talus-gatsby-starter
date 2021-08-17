@@ -11,6 +11,9 @@ module.exports = {
   },
   plugins: [
     {
+      // site will not build without a valid
+      // airtable api key; delete this plugin
+      // if airtable isn't going to be used.
       resolve: `gatsby-source-airtable`,
       options: {
         apiKey: process.env.AIRTABLE_API_KEY,
@@ -23,11 +26,11 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
-    'gatsby-plugin-mdx',
     {
+      // filling in the gtag here
+      // will set up both the gatsby
+      // google analytics plugin and
+      // the cookieconsent opt-in system.
       resolve: `gatsby-plugin-gtag`,
       options: {
         trackingId: `G-XXXXXXXXXX`,
@@ -43,5 +46,9 @@ module.exports = {
       },
       __key: 'pages',
     },
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-mdx',
   ],
 }
