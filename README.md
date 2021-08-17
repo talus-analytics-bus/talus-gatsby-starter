@@ -39,14 +39,23 @@
     gatsby new [project-name] ./talus-gatsby-starter
     ```
 
-5.  **Set up Git**
+5.  **Set AIRTABLE_API_KEY env var**
 
-    Execute the included `setup-repo.sh` script to initialize a git repo with all branches configured in the CCI config.
+    The easiest way to do this locally is in a script in the `sh/` directory, which is included in the starter but all contents are gitignored.
+
+    ```shell
+    export AIRTABLE_API_KEY=keyXXXXXXXXXXXXXX;
+    gatsby develop;
+    ```
+
+6.  **Set up Git**
+
+    Execute the included `setup-repo.sh` script to initialize a git repo with the continuous integration and deployment branches configured to match the CCI config.
 
     ```shell
     ./setup-repo.sh
     ```
 
-6.  **Update `gatsby-config.js`.**
+7.  **Update `gatsby-config.js`.**
 
     `gatsby-config.js` will automatically configure opt-in analytics, cookieconsent, and airtable connections based on the values provided.
