@@ -5,11 +5,24 @@ module.exports = {
     cookieConsent: {
       cookieMessage:
         'Talus sites use cookies to ensure you get the best experience possible.',
-      buttonColor: '',
-      backgroundColor: '',
+      buttonColor: 'rgb(15, 35, 75)',
+      backgroundColor: '#edf2f2',
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.AIRTABLE_API_KEY,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: `apptYPkeoCz0lSn19`,
+            tableName: `Table 1`,
+          },
+        ],
+      },
+    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',

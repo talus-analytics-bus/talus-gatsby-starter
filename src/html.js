@@ -11,12 +11,11 @@ export default function HTML(props) {
     p => typeof p !== 'string' && p.resolve === `gatsby-plugin-gtag`
   ).options
 
-  backgroundColor = backgroundColor !== '' ? backgroundColor : '#edf2f4'
-  buttonColor = buttonColor !== '' ? buttonColor : '#edf2f4'
-
   if (trackingId === 'G-XXXXXXXXXX')
     console.warn(`Google Analytics not configured`)
   else console.info(`Google Analytics tag: ${trackingId}`)
+
+  console.log(buttonColor)
 
   return (
     <html {...props.htmlAttributes}>
@@ -89,10 +88,10 @@ export default function HTML(props) {
           window.cookieconsent.initialise({
             palette: {
               popup: {
-                background: ${backgroundColor}
+                background: "${backgroundColor}",
               },
               button: {
-                background: ${buttonColor}
+                background: "${buttonColor}",
               }
             },
             autoOpen: true,
