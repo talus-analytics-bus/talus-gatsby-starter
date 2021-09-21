@@ -47,7 +47,7 @@ module.exports = {
       __key: 'pages',
     },
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-styled-components',
+    'talus-gatsby-transformer-svg',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
