@@ -26,6 +26,7 @@ module.exports = {
           {
             baseId: `apptYPkeoCz0lSn19`,
             tableName: `Icons`,
+            mapping: { SVG: `fileNode` },
           },
         ],
       },
