@@ -23,6 +23,10 @@ module.exports = {
             baseId: `apptYPkeoCz0lSn19`,
             tableName: `Table 1`,
           },
+          {
+            baseId: `apptYPkeoCz0lSn19`,
+            tableName: `Icons`,
+          },
         ],
       },
     },
