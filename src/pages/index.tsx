@@ -5,6 +5,7 @@ import Main from '../components/layout/Main'
 
 import useIndexPageData from '../cmsHooks/useIndexPageData'
 import AirtableCMSText, { getCMSText } from '../airtable-cms/AirtableCMSText'
+import AirtableCMSImage from '../airtable-cms/AirtableCMSImage'
 
 const IndexPage = (): JSX.Element => {
   const data = useIndexPageData()
@@ -13,6 +14,7 @@ const IndexPage = (): JSX.Element => {
     // all pages should be wrapped in the FigmaProvider
     <FigmaProvider>
       <Main>
+        <AirtableCMSImage name="Talus Logo" data={data} />
         <h1>
           <AirtableCMSText name="H1" data={data} />
         </h1>
