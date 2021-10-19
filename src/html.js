@@ -15,8 +15,6 @@ export default function HTML(props) {
     console.warn(`Google Analytics not configured`)
   else console.info(`Google Analytics tag: ${trackingId}`)
 
-  console.log(buttonColor)
-
   return (
     <html {...props.htmlAttributes} lang="en">
       <head>
