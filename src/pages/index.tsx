@@ -18,7 +18,9 @@ const IndexPage = (): JSX.Element => {
         </h1>
         <p>
           <AirtableCMSText name="Example Text" data={data} />
-          <a href={getCMSText(data, 'Airtable URL')}>this table.</a>
+          <a href={getCMSText(data, 'Airtable URL')}>
+            <AirtableCMSText name="Airtable Link Text" data={data} />
+          </a>
         </p>
       </Main>
     </FigmaProvider>
