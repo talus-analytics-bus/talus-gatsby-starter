@@ -4,8 +4,23 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/Layout/Layout'
 
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
+interface IndexPageData {
+  allAirtable: {
+    edges: {
+      node: {
+        data: {
+          Name: string
+          Notes: string
+          Status: string
+          url: string
+        }
+      }
+    }[]
+  }
+}
+
+const IndexPage: React.FC = () => {
+  const data: IndexPageData = useStaticQuery(graphql`
     query indexQuery {
       allAirtable {
         edges {
