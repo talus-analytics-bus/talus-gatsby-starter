@@ -10,6 +10,13 @@ const useIndexPageData = () => {
             data {
               Name
               Text
+              Image {
+                localFiles {
+                  childImageSharp {
+                    gatsbyImageData(height: 200, placeholder: TRACED_SVG)
+                  }
+                }
+              }
             }
           }
         }

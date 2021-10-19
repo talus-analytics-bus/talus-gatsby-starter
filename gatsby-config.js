@@ -22,6 +22,7 @@ module.exports = {
           {
             baseId: `apptYPkeoCz0lSn19`,
             tableName: `Table 1`,
+            mapping: { Image: `fileNode` },
           },
           {
             baseId: `apptYPkeoCz0lSn19`,
