@@ -8,7 +8,7 @@
 
     And pull it before using it!
 
-2.  **Build AWS Stack & Update CCI config**
+2.  **COMING SOON: Build AWS Stack & Update CCI config**
 
     Use the `build-stack` repo to set up all AWS resources for this project:
 
