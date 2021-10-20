@@ -58,6 +58,10 @@
     ./setup-repo.sh
     ```
 
-7.  **Update `gatsby-config.js`.**
+7.  **Clone the example airtable**
+
+    Clone the [example airtable base](https://airtable.com/apptYPkeoCz0lSn19/tblJV3LL08O5wNAHP/viwDPkxCqsqCF0nVi?blocks=hide) at this link or the one on the starter page, and update the `baseId` in `gatsby-config.js` to the new, project-specific airtable base. You may get warnings about missing content because of the content used for the starter home page.
+
+8.  **Update `gatsby-config.js`.**
 
     `gatsby-config.js` will automatically configure opt-in analytics, cookieconsent, and airtable connections based on the values provided.
