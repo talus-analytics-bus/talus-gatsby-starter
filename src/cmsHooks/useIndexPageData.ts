@@ -1,6 +1,9 @@
 import { useStaticQuery, graphql } from 'gatsby'
-import { AirtableCMSData } from '../airtable-cms/types'
 
+import { AirtableCMSData } from '@talus-analytics/library.airtable-cms'
+
+// Sites will have many of these content hooks, each
+// of which corresponds to one table in Airtable.
 const useIndexPageData = () => {
   const { cmsContent }: { cmsContent: AirtableCMSData } =
     useStaticQuery(graphql`

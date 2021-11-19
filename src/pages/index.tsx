@@ -1,31 +1,32 @@
 import React from 'react'
 
-import FigmaProvider from '../figma/FigmaProvider'
+import CMS from '@talus-analytics/library.airtable-cms'
+import Providers from '../components/layout/Providers'
+
 import Main from '../components/layout/Main'
 
 import useIndexPageData from '../cmsHooks/useIndexPageData'
-import AirtableCMSText, { getCMSText } from '../airtable-cms/AirtableCMSText'
-import AirtableCMSImage from '../airtable-cms/AirtableCMSImage'
 
 const IndexPage = (): JSX.Element => {
   const data = useIndexPageData()
 
   return (
-    // all pages should be wrapped in the FigmaProvider
-    <FigmaProvider>
+    // all pages should be wrapped in the Providers component
+    <Providers>
+      <CMS.SEO title={CMS.getText(data, 'Page title')} />
       <Main>
-        <AirtableCMSImage name="Talus Logo" data={data} />
+        <CMS.Image name="Talus Logo" data={data} />
         <h1>
-          <AirtableCMSText name="H1" data={data} />
+          <CMS.Text name="H1" data={data} />
         </h1>
         <p>
-          <AirtableCMSText name="Example Text" data={data} />
-          <a href={getCMSText(data, 'Airtable URL')}>
-            <AirtableCMSText name="Airtable Link Text" data={data} />
+          <CMS.Text name="Example Text" data={data} />
+          <a href={CMS.getText(data, 'Airtable URL')}>
+            <CMS.Text name="Airtable Link Text" data={data} />
           </a>
         </p>
       </Main>
-    </FigmaProvider>
+    </Providers>
   )
 }
 
