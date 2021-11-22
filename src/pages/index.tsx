@@ -12,8 +12,9 @@ const IndexPage = (): JSX.Element => {
 
   return (
     // all pages should be wrapped in the Providers component
+    // all pages should start with CMS.SEO to set metadata.
     <Providers>
-      <CMS.SEO title={CMS.getText(data, 'Page title')} />
+      <CMS.SEO />
       <Main>
         <CMS.Image name="Talus Logo" data={data} />
         <h1>
