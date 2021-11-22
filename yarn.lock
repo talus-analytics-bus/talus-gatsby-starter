@@ -1879,19 +1879,28 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
-"@talus-analytics/library.airtable-cms@^0.0.20":
-  version "0.0.20"
-  resolved "https://node.bit.dev/@talus-analytics/library.airtable-cms/-/@talus-analytics-library.airtable-cms-0.0.20.tgz#15b773170c2258b229f0ff9b578b2a506e397c36"
-  integrity sha1-FbdzFwwiWLIp8P+bV4sqUG45fDY=
+"@talus-analytics/library.airtable-cms@^0.0.21":
+  version "0.0.21"
+  resolved "https://node.bit.dev/@talus-analytics/library.airtable-cms/-/@talus-analytics-library.airtable-cms-0.0.21.tgz#84ab96674623183ff1877c5787e834965187e293"
+  integrity sha1-hKuWZ0YjGD/xh3xXh+g0llGH4pM=
   dependencies:
     "@talus-analytics/library.airtable.cms-icon" "0.0.11"
     "@talus-analytics/library.airtable.cms-image" "0.0.8"
-    "@talus-analytics/library.airtable.cms-plot-icon" "0.0.6"
+    "@talus-analytics/library.airtable.cms-plot-icon" "0.0.5"
     "@talus-analytics/library.airtable.cms-rich-text" "0.0.4"
-    "@talus-analytics/library.airtable.cms-seo" "0.0.3"
+    "@talus-analytics/library.airtable.cms-seo" "0.0.4"
     "@talus-analytics/library.airtable.cms-text" "0.0.5"
     "@talus-analytics/library.airtable.cms-types" "0.0.7"
     core-js "^3.0.0"
+
+"@talus-analytics/library.airtable.cms-icon@0.0.10":
+  version "0.0.10"
+  resolved "https://node.bit.dev/@talus-analytics/library.airtable.cms-icon/-/@talus-analytics-library.airtable.cms-icon-0.0.10.tgz#8f6fc933de76def761a56c12f96b3896b030d784"
+  integrity sha1-j2/JM9523vdhpWwS+Ws4lrAw14Q=
+  dependencies:
+    core-js "^3.0.0"
+    node-html-parser "^4.1.4"
+    styled-components "^5.3.0"
 
 "@talus-analytics/library.airtable.cms-icon@0.0.11":
   version "0.0.11"
@@ -1911,12 +1920,12 @@
     core-js "^3.0.0"
     gatsby-plugin-image "^2.1.0-next.0"
 
-"@talus-analytics/library.airtable.cms-plot-icon@0.0.6":
-  version "0.0.6"
-  resolved "https://node.bit.dev/@talus-analytics/library.airtable.cms-plot-icon/-/@talus-analytics-library.airtable.cms-plot-icon-0.0.6.tgz#8fb87284ad1a0ca61e5427838520dbcec1f22777"
-  integrity sha1-j7hyhK0aDKYeVCeDhSDbzsHyJ3c=
+"@talus-analytics/library.airtable.cms-plot-icon@0.0.5":
+  version "0.0.5"
+  resolved "https://node.bit.dev/@talus-analytics/library.airtable.cms-plot-icon/-/@talus-analytics-library.airtable.cms-plot-icon-0.0.5.tgz#8f057e6010b60781c479b9717664e746fc022696"
+  integrity sha1-jwV+YBC2B4HEeblxdmTnRvwCJpY=
   dependencies:
-    "@talus-analytics/library.airtable.cms-icon" "0.0.11"
+    "@talus-analytics/library.airtable.cms-icon" "0.0.10"
     core-js "^3.0.0"
     styled-components "^5.3.0"
 
@@ -1932,10 +1941,10 @@
     remark-parse "^10.0.0"
     unified "^10.1.0"
 
-"@talus-analytics/library.airtable.cms-seo@0.0.3":
-  version "0.0.3"
-  resolved "https://node.bit.dev/@talus-analytics/library.airtable.cms-seo/-/@talus-analytics-library.airtable.cms-seo-0.0.3.tgz#8317ce6f72f87b9831b99f4203866357b6f899ee"
-  integrity sha1-gxfOb3L4e5gxuZ9CA4ZjV7b4me4=
+"@talus-analytics/library.airtable.cms-seo@0.0.4":
+  version "0.0.4"
+  resolved "https://node.bit.dev/@talus-analytics/library.airtable.cms-seo/-/@talus-analytics-library.airtable.cms-seo-0.0.4.tgz#b459bffd823b3156879336f9977558be20847786"
+  integrity sha1-tFm//YI7MVaHkzb5l3VYviCEd4Y=
   dependencies:
     "@reach/router" "^1.3.4"
     "@talus-analytics/library.airtable.cms-image" "0.0.8"

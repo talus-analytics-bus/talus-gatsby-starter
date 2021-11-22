@@ -1,12 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { siteMetadata, plugins } from '../gatsby-config'
+import { plugins } from '../gatsby-config'
 
 export default function HTML(props) {
-  let { cookieMessage, buttonColor, backgroundColor } =
-    siteMetadata.cookieConsent
-
   const { trackingId } = plugins.find(
     p => typeof p !== 'string' && p.resolve === `gatsby-plugin-gtag`
   ).options
@@ -20,6 +17,7 @@ export default function HTML(props) {
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -54,90 +52,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <script
-          src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
-          data-cfasync="false"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-          /**
-           * If consent is given for cookies, add gtag cookies
-           * @method setupGA
-           * @return {[type]} [description]
-           */
-          function setupGA(allowed) {
-            if (!allowed) {
-              window["ga-disable-${trackingId}"] = true;
-            } else {
-              window["ga-disable-${trackingId}"] = false;
-              /**
-               * Helper function for defining gtag cookies
-               * @method gtag
-               * @return {[type]} [description]
-               */
-              function gtag() {
-                dataLayer.push(arguments);
-              }
-              gtag("js", new Date());
-              gtag("config", "${trackingId}");
-            }
-          }
-          window.cookieconsent.initialise({
-            palette: {
-              popup: {
-                background: "${backgroundColor}",
-              },
-              button: {
-                background: "${buttonColor}",
-              }
-            },
-            autoOpen: true,
-            position: "bottom-right",
-            type: "opt-in",
-            content: {
-              message: "${cookieMessage}"
-            },
-            hasTransition: false,
-            // https://developers.google.com/analytics/devguides/collection/analyticsjs/user-opt-out
-            onInitialise: function(status) {
-              var type = this.options.type;
-              var didConsent = this.hasConsented();
-              if (type == "opt-in" && didConsent) {
-                // enable cookies
-                setupGA(true);
-              }
-              if (type == "opt-out" && !didConsent) {
-                // disable cookies
-                setupGA(false);
-              }
-            },
-            onStatusChange: function(status, chosenBefore) {
-              var type = this.options.type;
-              var didConsent = this.hasConsented();
-              if (type == "opt-in" && didConsent) {
-                // enable cookies
-                setupGA(true);
-              }
-              if (type == "opt-out" && !didConsent) {
-                // disable cookies
-                setupGA(false);
-              }
-            },
-            onRevokeChoice: function() {
-              var type = this.options.type;
-              if (type == "opt-in") {
-                // disable cookies
-                setupGA(false);
-              }
-              if (type == "opt-out") {
-                // enable cookies
-                setupGA(true);
-              }
-            }
-          });`,
-          }}
-        ></script>
       </body>
     </html>
   )
