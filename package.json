@@ -8,11 +8,10 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "develop": "scripts/start.sh",
+    "start": "scripts/start.sh",
     "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "serve": "gatsby serve"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
