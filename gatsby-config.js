@@ -22,19 +22,19 @@ module.exports = {
           {
             baseId: `apptYPkeoCz0lSn19`,
             tableName: `Table 1`,
-            tableView: `CMS view`,
+            tableView: `CMS`,
             mapping: { Image: `fileNode` },
           },
           {
             baseId: `apptYPkeoCz0lSn19`,
             tableName: `Site metadata`,
-            tableView: `CMS view`,
+            tableView: `CMS`,
             mapping: { Image: `fileNode` },
           },
           {
             baseId: `apptYPkeoCz0lSn19`,
             tableName: `Icons`,
-            tableView: `CMS view`,
+            tableView: `CMS`,
             mapping: { SVG: `fileNode` },
           },
         ],
