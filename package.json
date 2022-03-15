@@ -11,7 +11,8 @@
     "develop": "scripts/start.sh",
     "start": "scripts/start.sh",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "postinstall": "scripts/postinstall.sh"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
