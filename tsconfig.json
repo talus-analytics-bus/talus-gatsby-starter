@@ -17,8 +17,7 @@
         "name": "typescript-styled-plugin"
       }
     ],
-    "allowJs": true,
-    "baseUrl": "src"
+    "allowJs": true
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./.cache", "./plugins", "./public"]
