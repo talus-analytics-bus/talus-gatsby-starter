@@ -64,6 +64,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'talus-gatsby-transformer-svg',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-root-import',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-image',
