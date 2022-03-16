@@ -1,11 +1,30 @@
 import React from 'react'
 
-import CMS from '@talus-analytics/library.airtable-cms'
-import FigmaProvider from '../../figma/FigmaProvider'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
-import useIconsQuery from '../../cmsHooks/useIconsQuery'
-import useSiteMetadataQuery from '../../cmsHooks/useSiteMetadataQuery'
-import getTrackingId from '../../utilities/trackingId'
+import CMS from '@talus-analytics/library.airtable-cms'
+
+// import textStyles from '../figma/textStyles'
+// import textStyles from '../../figma/textStyles'
+import textStyles from 'figma/textStyles'
+import colorPalette from 'figma/colorPalette'
+
+import useIconsQuery from 'cmsHooks/useIconsQuery'
+import useSiteMetadataQuery from 'cmsHooks/useSiteMetadataQuery'
+import getTrackingId from 'utilities/trackingId'
+
+import '../../../static/assets/fonts/fonts.css'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+`
 
 // site-wide contexts for themes, icons, and metadata
 const Providers = ({ children }: { children: React.ReactNode }) => {
@@ -17,7 +36,10 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <CMS.IconProvider data={icons}>
       <CMS.SiteMetadataProvider data={siteMetadata} trackingId={trackingId}>
-        <FigmaProvider>{children}</FigmaProvider>
+        <ThemeProvider theme={{ ...textStyles, ...colorPalette }}>
+          <GlobalStyle />
+          {children}
+        </ThemeProvider>
       </CMS.SiteMetadataProvider>
     </CMS.IconProvider>
   )
