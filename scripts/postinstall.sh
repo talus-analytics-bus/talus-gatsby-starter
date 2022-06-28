@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # install, compile, and link bit
-bit compile;
-bit link;
+# only required for projects with bit imported components
+# bit compile;
+# bit link;
+
+
 
