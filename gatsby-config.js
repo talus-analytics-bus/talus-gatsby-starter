@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://example.talusanalytics.com/',
@@ -16,6 +17,7 @@ module.exports = {
       // if airtable isn't going to be used.
       resolve: `gatsby-source-airtable`,
       options: {
+        // eslint-disable-next-line
         apiKey: process.env.AIRTABLE_API_KEY,
         concurrency: 5,
         tables: [
