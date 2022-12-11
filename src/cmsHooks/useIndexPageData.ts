@@ -16,7 +16,7 @@ const useIndexPageData = () => {
               Image {
                 localFiles {
                   childImageSharp {
-                    gatsbyImageData(height: 200, placeholder: TRACED_SVG)
+                    gatsbyImageData(height: 200, placeholder: BLURRED)
                   }
                 }
               }
