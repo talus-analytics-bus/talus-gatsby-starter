@@ -1,20 +1,14 @@
 import config from '../../gatsby-config'
 
-type GtagPlugin =
-  | {
-      resolve: string
-      options: {
-        trackingId: string
-      }
-    }
-  | undefined
-
 const getTrackingId = () => {
   // find plugin config for GA
   const gaPluginConfig = config.plugins!.find(
     p => typeof p !== 'string' && p.resolve === `gatsby-plugin-gtag`
-  ) as GtagPlugin
-  const trackingId = gaPluginConfig?.options.trackingId
+  )
+  const trackingId =
+    typeof gaPluginConfig !== 'string' &&
+    gaPluginConfig?.options &&
+    (gaPluginConfig.options.trackingId as string)
 
   // if GA not yet configured, return undefined
   if (trackingId === 'G-XXXXXXXXXX') return undefined
