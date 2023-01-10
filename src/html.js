@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { plugins } from '../gatsby-config'
+import config from '../gatsby-config'
 
 export default function HTML(props) {
-  const { trackingId } = plugins.find(
+  const { trackingId } = config.plugins.find(
     p => typeof p !== 'string' && p.resolve === `gatsby-plugin-gtag`
   ).options
 
-  if (trackingId === 'G-XXXXXXXXXX')
-    console.warn(`Google Analytics not configured`)
-  else console.info(`Google Analytics tag: ${trackingId}`)
+  // if (trackingId === 'G-XXXXXXXXXX')
+  //   console.warn(`Google Analytics not configured`)
+  // else console.info(`Google Analytics tag: ${trackingId}`)
 
   return (
     <html {...props.htmlAttributes} lang="en">
