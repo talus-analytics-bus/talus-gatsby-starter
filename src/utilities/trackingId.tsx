@@ -12,7 +12,7 @@ type GtagPlugin =
 const getTrackingId = () => {
   // find plugin config for GA
   const gaPluginConfig = config.plugins!.find(
-    (p: any) => typeof p !== 'string' && p.resolve === `gatsby-plugin-gtag`
+    p => typeof p !== 'string' && p.resolve === `gatsby-plugin-gtag`
   ) as GtagPlugin
   const trackingId = gaPluginConfig?.options.trackingId
 
