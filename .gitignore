@@ -3,3 +3,6 @@ node_modules/
 public/
 
 .DS_Store
+
+# gatsby auto-generated types
+gatsby-types.d.ts
