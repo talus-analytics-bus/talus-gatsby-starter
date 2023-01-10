@@ -1,5 +1,6 @@
-// eslint-disable-next-line
-module.exports = {
+import type { GatsbyConfig } from 'gatsby'
+
+const config: GatsbyConfig = {
   siteMetadata: {
     siteUrl: 'https://example.talusanalytics.com/',
     title: 'Talus Analytics',
@@ -10,6 +11,7 @@ module.exports = {
       backgroundColor: '#edf2f2',
     },
   },
+  graphqlTypegen: true,
   plugins: [
     {
       // site will not build without a valid
@@ -74,3 +76,5 @@ module.exports = {
     'gatsby-plugin-mdx',
   ],
 }
+
+export default config
