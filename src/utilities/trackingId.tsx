@@ -10,8 +10,10 @@ const getTrackingId = () => {
     gaPluginConfig?.options &&
     (gaPluginConfig.options.trackingId as string)
 
+  if (!trackingId) return undefined
   // if GA not yet configured, return undefined
   if (trackingId === 'G-XXXXXXXXXX') return undefined
+
   return trackingId
 }
 
