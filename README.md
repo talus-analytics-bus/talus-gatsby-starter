@@ -52,7 +52,7 @@
 6.  **Build AWS Stack**
 
     In the `/CloudFormation/` directory, update all project specific names and tags in the `deploy-stack.sh`, `update-stack.sh`, scripts, and
-    update site-specific passwords in the `build-stack.yaml`. Do not commit these passwords to github, but commit all other template and
+    update site-specific passwords in the `build-stack.yaml` inside `authObject` on line 160. Do not commit these passwords to github, but commit all other template and
     script changes. These scripts serve as a record for the exact values used for deployment, updating, and tagging CloudFormation stacks.
 
     After updating both scripts, run `deploy-stack.sh` to build the site deployments:
