@@ -82,18 +82,18 @@
 
 ## 📈 Analytics
 
-- [Plausible Dashboard]()
-- [Google Search Console]()
-- [Google Analytics]()
+- [Plausible Dashboard](#)
+- [Google Search Console](#)
+- [Google Analytics](#)
 
 ## 🚀 Deployment Status
 
-| Branch  | CI/CD Status                      | Url                                        |
-| ------- | --------------------------------- | ------------------------------------------ |
-| Prod    | [Create CI/CD Badges in CircleCI] | [prod-projectname.talusanalytics.com]()    |
-| Staging | [Create CI/CD Badges in CircleCI] | [staging-projectname.talusanalytics.com]() |
-| Review  | [Create CI/CD Badges in CircleCI] | [review-projectname.talusanalytics.com]()  |
-| Dev     | [Create CI/CD Badges in CircleCI] | [dev-projectname.talusanalytics.com]()     |
+| Branch  | CI/CD Status                      | Url                                         |
+| ------- | --------------------------------- | ------------------------------------------- |
+| Prod    | [Create CI/CD Badges in CircleCI] | [prod-projectname.talusanalytics.com](#)    |
+| Staging | [Create CI/CD Badges in CircleCI] | [staging-projectname.talusanalytics.com](#) |
+| Review  | [Create CI/CD Badges in CircleCI] | [review-projectname.talusanalytics.com](#)  |
+| Dev     | [Create CI/CD Badges in CircleCI] | [dev-projectname.talusanalytics.com](#)     |
 
 Automated deployment schedule: all data are ingested to `Staging` weekly.
 
