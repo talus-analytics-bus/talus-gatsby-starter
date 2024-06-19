@@ -17,7 +17,17 @@
 
     If you want to put your new site in a different directory from where you cloned `talus-gatsby-starter`, you will need to give the `gatsby new` command the path to `talus-gatsby-starter`.
 
-3.  **Set up GitHub Repository**
+1.  **Change name of docker container**
+
+    To change the name of the Docker container, change line 3 in the `compose.yaml` file.
+
+    ```yaml
+    services:
+      website:
+        container_name: talus-gatsby-starter
+    ```
+
+1.  **Set up GitHub Repository**
 
     First, create a new empty repository for your project in Github. Make sure to copy the remote origin url (should be something like `https://github.com/talus-analytics-bus/awesome-repo-name.git`).
 
@@ -27,17 +37,17 @@
     ./setup-repo.sh
     ```
 
-4.  **Clone the example airtable**
+1.  **Clone the example airtable**
 
     Clone the [example airtable base](https://airtable.com/apptYPkeoCz0lSn19/tblJV3LL08O5wNAHP/viwDPkxCqsqCF0nVi?blocks=hide) at this link
     or the one on the starter page, and update the `baseId` in `gatsby-config.js` to the new, project-specific airtable base. You may get
     warnings about missing content because of the content used for the starter home page.
 
-5.  **Update `gatsby-config.ts`.**
+1.  **Update `gatsby-config.ts`.**
 
     `gatsby-config.ts` will automatically configure opt-in analytics, cookieconsent, and airtable connections based on the values provided.
 
-6.  **Build AWS Stack**
+1.  **Build AWS Stack**
 
     In the `/CloudFormation/` directory, update all project specific names and tags in the `deploy-stack.sh`, `update-stack.sh`, scripts, and
     update site-specific passwords in the `build-stack.yaml` inside `authObject` on line 160. Do not commit these passwords to github, but commit all other template and
@@ -56,7 +66,7 @@
     `CloudFormation/update-stack.sh`
     ```
 
-7.  **Update CCI Configuration**
+1.  **Update CCI Configuration**
 
     The "Outputs" tab of the CloudFormation stack will contain the distribution IDs and bucket names which should be used in `/.circleci/config.yml`.
 
