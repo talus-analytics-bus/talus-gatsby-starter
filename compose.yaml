@@ -1,0 +1,14 @@
+services:
+  website:
+    container_name: talus-gatsby-starter
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ~/.aws:/root/.aws
+      - ./src:/app/src
+      # - ./data:/app/data
+    environment:
+      AIRTABLE_API_KEY:
+      GATSBY_MAPBOX_API_KEY:
+
