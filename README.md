@@ -10,7 +10,7 @@
 
     In that same directory, use the Gatsby CLI to create a new site, using this command:
 
-    ```shell
+    ```sh
     # create a new Gatsby site using the talus starter
     gatsby new [project-name] ./talus-gatsby-starter
     ```
@@ -33,7 +33,7 @@
 
     Then, execute the included `setup-repo.sh` script to initialize a git repo with the continuous integration and deployment branches configured to match the CCI config. When prompted for the `Github URL for remote origin:`, provide the remote origin url for your repo that you copied.
 
-    ```shell
+    ```sh
     ./setup-repo.sh
     ```
 
@@ -55,15 +55,15 @@
 
     After updating both scripts, run `deploy-stack.sh` to build the site deployments:
 
-    ```shell
-    `CloudFormation/deploy-stack.sh`
+    ```sh
+    CloudFormation/deploy-stack.sh
     ```
 
     When any changes are made in the template, such as migrating the site off of the `talusanalytics.com` root domain, changes should be made
     using the `update-stack` script.
 
-    ```shell
-    `CloudFormation/update-stack.sh`
+    ```sh
+    CloudFormation/update-stack.sh
     ```
 
 1.  **Update CCI Configuration**
