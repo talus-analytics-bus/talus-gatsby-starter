@@ -19,16 +19,16 @@ export AIRTABLE_API_KEY=$(
   jq  -r .SecretString | jq -r .AIRTABLE_API_KEY\
 )
 
-if [ "$reset" == "1" ]; then 
+if [ "$reset" == "1" ]; then
   npm i
   gatsby clean;
 fi
 
-if [ "$clean" == "1" ]; then 
+if [ "$clean" == "1" ]; then
   gatsby clean
 fi
 
-gatsby develop -H 0.0.0.0;
+gatsby build;
 
 
 

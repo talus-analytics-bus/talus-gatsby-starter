@@ -12,7 +12,6 @@
     "dev": "scripts/start.sh",
     "start": "scripts/start.sh",
     "build": "scripts/build.sh",
-    "serve": "gatsby serve",
     "tsc": "tsc"
   },
   "dependencies": {

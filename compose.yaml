@@ -11,4 +11,5 @@ services:
     environment:
       AIRTABLE_API_KEY:
       GATSBY_MAPBOX_API_KEY:
+      RUN_MODE:
 
