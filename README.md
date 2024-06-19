@@ -116,7 +116,7 @@ The static site output will be in the `./public` directory. Any server can be us
 to view the static site locally, I recommend python:
 
 ```
-cd./public
+cd ./public
 python3 -m http.server
 ```
 
