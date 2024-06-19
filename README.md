@@ -4,18 +4,6 @@
 
 ## 🚀 Quick start
 
-1.  **Check Gatsby CLI configuration**
-
-    To be compatible with our CCI build scripts, Gatsby CLI should use `yarn`:
-
-    `~/.config/gatsby/config.json` should include:
-
-    ```json
-    "cli": {
-      "packageManager": "yarn"
-    }
-    ```
-
 2.  **Create a Gatsby site.**
 
     Clone this repository into the same directory (folder) where you want your new site to be.
@@ -104,19 +92,42 @@ Automated deployment schedule: all data are ingested to `Staging` weekly.
 
 ## 👩‍💻 Local Development Quick start
 
-1. [Install](https://bit.dev/docs/getting-started/installing-bit/installing-bit) & [log in](https://bit.dev/reference/reference/cli-reference/#login) to Bit
-
-2. Install dependencies
+Build container and start development server
 
 ```
-yarn
+docker compose up
 ```
 
-3. Start development server
+### Optional
+
+#### To test a production build locally:
 
 ```
-yarn start
+RUN_MODE='build' docker compose up
 ```
+
+The static site output will be in the `./public` directory. Any server can be used
+to view the static site locally, I recommend python:
+
+```
+cd./public
+python3 -m http.server
+```
+
+#### Run `dev` server and `build` without docker:
+
+- Install dependencies
+  ```
+  npm i
+  ```
+- Run `dev` server
+  ```
+  npm run dev
+  ```
+- Build static site
+  ```
+  npm run build
+  ```
 
 ## 🖥 Deployment Infrastructure
 
