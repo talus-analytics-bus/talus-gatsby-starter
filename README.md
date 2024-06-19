@@ -98,7 +98,11 @@ Build container and start development server
 docker compose up
 ```
 
-### Optional
+</br>
+</br>
+</br>
+
+### Optional Development tools for Troubleshooting
 
 #### To test a production build locally:
 
