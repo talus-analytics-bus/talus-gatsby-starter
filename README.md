@@ -86,6 +86,7 @@
 Automated deployment schedule: all data are ingested to `Staging` weekly.
 
 </br>
+
 ## 📄 Ingest Latest Data from Airtable
 
 1. Click the "CI/CD Status" badge above next to the site where you want to update data
@@ -127,7 +128,7 @@ python3 -m http.server
   ```
 - Run dev server
   ```
-  npm run dev
+  npm run start
   ```
 - Build static site
   ```
@@ -135,6 +136,7 @@ python3 -m http.server
   ```
 
 </br>
+
 ## 🖥 Deployment Infrastructure
 
 All Biosecurity Central Infrastructure is managed using the CloudFormation template within
