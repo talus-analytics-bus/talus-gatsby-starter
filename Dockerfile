@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 8000 8080
 
-CMD ["sh", "-c", "if [ ${RUN_MODE} = 'build' ]; then npm run build; else npm run start; fi"]
+CMD ["bash", "-c", "if [ ${RUN_MODE:-start} = 'build' ]; then npm run build; else npm run start; fi"]
